@@ -1,3 +1,6 @@
-SELECT Account_Name
-FROM user_data
-WHERE Gender = 'Female' AND Date_Joined < '2020-01-01';
+SELECT Products.ProductName, SUM(Orders.Quantity) AS TotalQuantity
+FROM Orders
+JOIN Products ON Orders.ProductID = Products.ProductID
+GROUP BY Products.ProductName
+ORDER BY TotalQuantity DESC
+LIMIT 1;

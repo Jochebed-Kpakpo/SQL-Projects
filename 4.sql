@@ -1,3 +1,3 @@
-SELECT COUNT(User_ID) AS User_Count
-FROM user_data
-WHERE Date_Joined > '2020-01-01';
+SELECT OrderDate, COUNT(OrderID) AS OrderCount
+FROM Orders
+GROUP BY OrderDate;

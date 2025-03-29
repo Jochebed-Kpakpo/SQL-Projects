@@ -1,3 +1,4 @@
-SELECT Account_Name, Followers
-FROM user_data
-ORDER BY Followers DESC;
+SELECT Customers.CustomerName, SUM(Orders.Total) AS TotalSales
+FROM Orders
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+GROUP BY Customers.CustomerName;

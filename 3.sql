@@ -1,4 +1,4 @@
-SELECT Account_Name, Posts, Likes
-FROM user_data
-WHERE Posts > 100 
-AND Likes < 500;
+SELECT Products.ProductName, SUM(Orders.Total) AS TotalRevenue
+FROM Orders
+JOIN Products ON Orders.ProductID = Products.ProductID
+GROUP BY Products.ProductName;
